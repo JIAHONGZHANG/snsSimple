@@ -1,0 +1,127 @@
+{
+  "EDITOR_STATE": {
+    "allProjectFiles": {
+      "e66812ca-add4-41e6-bbbb-f0716b100abb": {
+        "id": "e66812ca-add4-41e6-bbbb-f0716b100abb",
+        "parent": null,
+        "name": "snsSimple",
+        "type": "DIRECTORY",
+        "isDirectory": true,
+        "children": [
+          "fbf72ab8-cb43-45e1-b502-fbcf3eecceb4"
+        ],
+        "isRemovable": false,
+        "filePath": "snsSimple"
+      },
+      "fbf72ab8-cb43-45e1-b502-fbcf3eecceb4": {
+        "id": "fbf72ab8-cb43-45e1-b502-fbcf3eecceb4",
+        "parent": "e66812ca-add4-41e6-bbbb-f0716b100abb",
+        "name": "lambda.js",
+        "type": "JS_LAMBDA",
+        "isDirectory": false,
+        "children": [],
+        "isRemovable": true,
+        "filePath": "snsSimple/lambda.js",
+        "config": {
+          "runtime": "nodejs8.10",
+          "handler": "handler",
+          "timeout": 60,
+          "memory": 128,
+          "layers": []
+        },
+        "triggers": [
+          {
+            "resourceName": "apigapSoutheast2SMSGatewaysendSMSpost",
+            "config": {}
+          }
+        ],
+        "testCases": {
+          "f30d2ba8-e06a-4f9a-acc5-9abd3215c0b3": {
+            "id": "f30d2ba8-e06a-4f9a-acc5-9abd3215c0b3",
+            "name": "Test event",
+            "functionId": "fbf72ab8-cb43-45e1-b502-fbcf3eecceb4",
+            "event": "{\n    \"receiver\": \"+61435710345\",\n    \"message\": \"Hello from SNS\",\n    \"sender\": \"mySNS\"\n}",
+            "eventTemplate": "hello-world"
+          }
+        }
+      }
+    },
+    "rootNode": "e66812ca-add4-41e6-bbbb-f0716b100abb",
+    "openFiles": [
+      "fbf72ab8-cb43-45e1-b502-fbcf3eecceb4"
+    ],
+    "currentFileId": "fbf72ab8-cb43-45e1-b502-fbcf3eecceb4",
+    "resources": {
+      "apigapSoutheast2SMSGatewaysendSMSpost": {
+        "name": "apigapSoutheast2SMSGatewaysendSMSpost",
+        "type": "API_GATEWAY",
+        "config": {
+          "selectedRegion": "ap-southeast-2",
+          "apiMode": 0,
+          "apiName": "SMSGateway",
+          "endpointType": "EDGE",
+          "resourceMode": 0,
+          "resourceName": "sendSMS",
+          "resourcePath": "/sendSMS",
+          "restMethod": "POST",
+          "proxyIntegration": false,
+          "enableCORS": false,
+          "stageMode": 0,
+          "stageName": "prod",
+          "mode": 0
+        }
+      },
+      "snsDirectSMSResource": {
+        "name": "snsDirectSMSResource",
+        "type": "SNS",
+        "config": {
+          "snsType": 1,
+          "numbers": [
+            "@{receiver}"
+          ]
+        }
+      }
+    },
+    "customTemplate": {
+      "dialect": null,
+      "definitions": null
+    },
+    "envVariables": [
+      {
+        "lambdaId": "all",
+        "varKey": "SIGMA_AWS_ACC_ID",
+        "varValue": null,
+        "shouldPersist": false,
+        "displayOnly": false,
+        "editable": false
+      }
+    ],
+    "packageJSON": {
+      "dependencies": {
+        "aws-sdk": {
+          "name": "aws-sdk",
+          "language": "javascript",
+          "version": "2.176.0",
+          "dev": true,
+          "notRemovable": false
+        }
+      }
+    }
+  },
+  "PROJECT_META": {
+    "projectName": "snsSimple",
+    "projectDescription": "",
+    "projectVersion": "1.0.0",
+    "projectRegion": "ap-southeast-2",
+    "platform": "AWS",
+    "platformRegions": {},
+    "lastSave": 1579817875167
+  },
+  "VCS_STATE": {
+    "provider": "GitHub",
+    "repo": {
+      "name": "snsSimple",
+      "url": "https://github.com/JIAHONGZHANG/snsSimple"
+    }
+  }
+}
